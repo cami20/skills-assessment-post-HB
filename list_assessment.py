@@ -52,8 +52,15 @@ def print_indices(items):
     
     """
 
+    seen = []
+
     for item in items:
-        print items.index(item), item
+        if item not in seen:
+            seen.append(item)
+            print items.index(item), item
+
+        else:
+            print items.index(item, 1), item
 
 
 def foods_in_common(foods1, foods2):
