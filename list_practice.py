@@ -90,8 +90,8 @@ def smallest_int(numbers):
         >>> smallest_int([]) is None
         True
     """
-    if not numbers:
-        return 'None'
+    if len(numbers) == 0:
+        return None
 
     small = numbers[0]
 
@@ -121,8 +121,8 @@ def largest_int(numbers):
         True
     """
 
-    if not numbers:
-        return 'None'
+    if len(numbers) == 0:
+        return None
 
     large = numbers[0]
 
@@ -370,9 +370,9 @@ def reverse_list_in_place(items):
         >>> orig
         ['I', 'love', 'cookies']
     """
+    rev = items.reverse()
 
-    return items[::-1]
-
+    return rev
 
 def duplicates(items):
     """Return list of words from input list which were duplicates.
