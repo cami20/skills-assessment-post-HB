@@ -400,19 +400,15 @@ def duplicates(items):
         ['apple', 'apple', 'berry']
     """
 
-    items.sort()
-
     dups = []
-    copy = items
-    count = 0
+    counter = 0
 
-    for item in copy:
-        check = copy.pop(count)
+    while counter < len(items):
+        if items[counter] in items[counter + 1:]:
+            if items[counter] not in dups:
+                dups.append(items[counter])
 
-        if check in copy:
-            dups.append(check)
-
-        count += 1
+        counter += 1
 
     return dups
 
