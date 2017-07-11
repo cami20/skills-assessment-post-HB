@@ -403,12 +403,14 @@ def duplicates(items):
     items.sort()
 
     dups = []
+    copy = items
     count = 0
 
-    for item in items:
-        if item in items:
-            dups.append(item)
-            items.pop(count)
+    for item in copy:
+        check = copy.pop(count)
+
+        if check in copy:
+            dups.append(check)
 
         count += 1
 
@@ -441,11 +443,23 @@ def find_letter_indices(words, letter):
     ("o" does not appear in "jumps", so the result for that input is
     `None`.)
     """
+    indexes = []
 
-    
+    for word in words:
+        count = 0
 
-    return []
+        if letter in word:
 
+            for w in word:
+                if w == letter:
+                    indexes.append(count)
+
+                count += 1
+
+        else:
+            indexes.append(None)
+
+    return indexes
 
 #####################################################################
 # END OF PRACTICE: You can ignore everything below.

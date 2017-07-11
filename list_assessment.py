@@ -17,7 +17,13 @@ def all_odd(numbers):
         []
     """
 
-    return ['the wrong thing']
+    odd = []
+
+    for num in numbers:
+        if num % 2 > 0:
+            odd.append(num)
+
+    return odd
 
 
 def print_indices(items):
@@ -46,7 +52,8 @@ def print_indices(items):
     
     """
 
-    print("Nothing at all")
+    for item in items:
+        print items.index(item), item
 
 
 def foods_in_common(foods1, foods2):
@@ -84,7 +91,14 @@ def foods_in_common(foods1, foods2):
 
     """
 
-    return ['the wrong thing']
+    dups = []
+
+    for food in foods1:
+        if food in foods2:
+            if food not in dups:
+                dups.append(food)
+
+    return sorted(dups)
 
 
 def every_other_item(items):
@@ -104,7 +118,16 @@ def every_other_item(items):
        ['you', 'are', 'good', 'at', 'code']
     """
 
-    return ['the wrong thing']
+    other = []
+    count = 0
+
+    for item in items:
+        if count % 2 == 0:
+            other.append(item)
+
+        count += 1
+
+    return other
 
 
 def largest_n_items(items, n):
@@ -129,8 +152,20 @@ def largest_n_items(items, n):
         [3, 3]
     """
 
-    return []
+    large = []
+    big = 0
 
+    while len(large) < n:
+        for item in items:
+            if item > big:
+                big = item
+
+        large.append(big)
+
+        items.pop(items.index(big))
+        big = 0
+
+    return sorted(large)
 
 #####################################################################
 # END OF ASSESSMENT: You can ignore everything below.
