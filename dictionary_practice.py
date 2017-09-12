@@ -110,6 +110,9 @@ def get_sum_zero_pairs(numbers):
         elif num == 0:
             pairs.append([0, 0])
 
+    pairs = (pairs)
+
+
     return pairs
 
 

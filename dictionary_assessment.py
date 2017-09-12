@@ -29,7 +29,18 @@ def count_words(phrase):
         {'Porcupine': 1, 'do.': 1, 'porcupine': 1, 'see,': 1}
     """
 
-    return {}
+    phrase = phrase.split()
+
+    wc = {}
+
+    for word in phrase:
+        if word in wc:
+            wc[word] += 1
+
+        else:
+            wc[word] = 1
+
+    return wc
 
 
 def get_melon_price(melon_name):
@@ -54,7 +65,13 @@ def get_melon_price(melon_name):
         'No price found'
     """
 
-    return 0
+    melon_price = {'Watermelon': 2.95, 'Cantaloupe': 2.50, 'Musk': 3.25, 'Christmas': 14.25}
+
+    for melon in melon_price:
+        if melon == melon_name:
+            return melon_price.get(melon)
+
+    return 'No price found'
 
 
 def word_length_sorted(words):
@@ -76,7 +93,16 @@ def word_length_sorted(words):
         [(2, ['ok']), (9, ['porcupine'])]
     """
 
-    return []
+    word_length = {}
+
+    for word in words:
+        if len(word) in words:
+            word_length[len(word)].append(word)
+
+        else:
+            word_length[len(word)] = [word]
+
+    return word_length
 
 
 def translate_to_pirate_talk(phrase):
@@ -118,7 +144,20 @@ def translate_to_pirate_talk(phrase):
         'me swabbie be not a man!'
     """
 
-    return ""
+    english_pirate = {'sir': 'matey', 'hotel': 'fleabag inn', 'student': 'swabbie', 'man': 'matey',
+        'professor': 'foul blaggart', 'restaurant': 'galley', 'your': 'yer', 'excuse': 'arr', 
+        'students': 'swabbies', 'are': 'be', 'restroom': 'head', 'my': 'me', 'is': 'be'}
+
+    pirate = ""
+
+    for word in phrase:
+        if word in english_pirate:
+            pirate += english_pirate.get(word)
+
+        else:
+            pirate += word
+
+    return pirate
 
 
 def kids_game(names):
