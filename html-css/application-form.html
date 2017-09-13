@@ -1,32 +1,39 @@
 <!doctype html>
 <html>
 <head>
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="style.css">
     <title>Application Form</title>
 </head>
 <body>
 
-	<h1>Job Application</h1>
+	<div class="container">
 
-	<div id="introduction">
-		Please fill out the form below se we can get to know you better!
-		We will need your first and last name. Your salary requirements. Then select the position that you are applying for.
-	</div>
+		<h1>Job Application</h1>
 
-	<br>
+		<div id="introduction">
+			Please fill out the form below se we can get to know you better!
+			We will need your first and last name. Your salary requirements. Then select the position that you are applying for.
+		</div>
 
-	<form id="application-form" action="/application-success" method="POST">
-		Enter your first name: <input type="text" name="firstName"><br>
-		Enter your last name: <input type="text" name="lastName"><br>
-		Enter your desired salry: <input type="text" name="salary"><br>
-		Select the job you are applying for: 
+		<br>
+
+		<form id="application-form" action="/application-success" method="POST">
+			Enter your first name: <input type="text" name="firstName"><br>
+			Enter your last name: <input type="text" name="lastName" id="last"><br>
+			Enter your desired salry: <input type="text" name="salary"><br>
+			Select the job you are applying for: 
 			<select name="jobTitle">
 				<option value="softwareEngineer">Software Engineer</option>
 				<option value="QAEngineer">QA Engineer</option>
 				<option value="productManager">Product Manager</option>
 			</select><br>
-		<input type="submit">
-	</form>
+			<input type="submit">
+		</form>
+	</div>
+
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/
+      3.3.7/js/bootstrap.min.js"></script>
 
 </body>
 </html>

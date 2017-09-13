@@ -4,6 +4,14 @@ input[type=text] {
 	background-color: yellow;
 }
 
+#submit {
+	background-color: yellow;
+}
+
+#last {
+	font-weight: bold;
+}
+
 #introduction {
 	border-style: solid;
 	border-width: 2px;
