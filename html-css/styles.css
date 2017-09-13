@@ -1,2 +1,10 @@
 /* Your CSS goes here */
 
+input[type=text] {
+	background-color: yellow;
+}
+
+#introduction {
+	border-style: solid;
+	border-width: 2px;
+}
